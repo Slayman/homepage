@@ -7,6 +7,7 @@ const widget = {
   mappings: {
     spools: {
       endpoint: "spool",
+      params: ["location"],
     },
   },
 };

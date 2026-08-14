@@ -8,8 +8,10 @@ export default function Component({ service }) {
   const { t } = useTranslation();
   const { widget } = service;
 
+  const queryParams = widget.location ? { location: widget.location } : undefined;
+
   // eslint-disable-next-line prefer-const
-  let { data: spoolData, error: spoolError } = useWidgetAPI(widget, "spools");
+  let { data: spoolData, error: spoolError } = useWidgetAPI(widget, "spools", queryParams);
 
   if (spoolError) {
     return <Container service={service} error={spoolError} />;
